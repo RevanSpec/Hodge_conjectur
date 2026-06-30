@@ -97,11 +97,16 @@ classer lesquels des $20$ types de Weil sont réalisés sur $V\cap\mathcal W_K$,
 Découpage honnête :
 
 - **[ferme — fait]** *Phase 3c.* Le corps $M$, sa structure, ses $20$ types de Weil. **Exact.**
-- **[ferme — prochaine étape, in-method]** *Phase 3d.* Construire un sixfold **CM** $A_\Phi$ à partir
-  d'un type de Weil $\Phi$ (réseau $\Phi(\mathcal O_M)\subset\mathbb C^6$) et **certifier**
-  $\mathrm{End}^0(A_\Phi)=M$ (degré $12$) + signature $(3,3)$ par le **réseau d'endomorphismes** : le
-  même outil que la Phase 3b, mais en **détectant le saut $\dim\,2\to12$**. Cela réalise (ii)–(iii)
-  de Mostaed sur des points CM **construits** (réponse connue : validation). Faisable, décidable.
+- **[ferme — FAIT, in-method]** *Phase 3d* (`hodge_phase3d_cm_witness.py`). Sixfold **CM** $A_\Phi$,
+  $M=KL=\mathbb Q(\zeta_{42})$ (degré $12$), $K=\mathbb Q(\sqrt{-3})$. **Certifié par algèbre exacte**
+  (pas de LLL) : $\mathrm{charpoly}(B_\zeta)=\Phi_{42}$ ($M$ agit, $[M:\mathbb Q]=12$),
+  $B_{\sqrt{-3}}^2=-3I$ ; type de Weil **primitif** (stabilisateur trivial) $\Rightarrow A_\Phi$
+  **simple**, $\mathrm{End}^0=M$ ; **signature $(3,3)$** ($\sqrt{-3}$ : $+i\sqrt3$ et $-i\sqrt3$, $3$
+  chacun) ; **polarisation** $\xi=\sqrt{-3}\,\eta$ ($\eta\in\mathcal O_L$, $\mathrm{Im}\,\phi_j(\xi)>0$
+  sur $\Phi$) $\Rightarrow$ vraie variété abélienne. Réalise (ii)–(iii) de Mostaed sur un point CM
+  **construit**. *Découverte structurelle* : **$12/20$** types de Weil sont primitifs ($A_\Phi$ simple,
+  $\mathrm{End}^0=M$) ; les $8$ autres ont stabilisateur non trivial ($A_\Phi$ non simple). Cela
+  raffine la condition de stabilisateur du « calcul ouvert » de Mostaed (Prop. 5.3 / rem. 5.4).
 - **[dur — mur, donnée explicite de Mostaed requise]** *Phase 3e.* Le **plongement modulaire** de la
   courbe de McMullen $V$ (carte développante du groupe triangulaire $(14,21,42)$, courbe de
   Teichmüller) dans $X_L$, puis la résolution de $V\cap\mathcal W_K$ ($2816$ équations) pour localiser
@@ -119,10 +124,10 @@ du **ferme/décidable** autour d'un cas ouvert nommé, jamais l'algébricité (n
 - **Phase 3 (non-split)** — *fait* : deux témoins $\det H=-3,\,-5$ certifiés (note 4 §6, script Phase 3).
 - **Phase 3b (généricité)** — *fait* : $\mathrm{End}_K=K$ sur les deux témoins (§1).
 - **Phase 3c (CM arithmétique)** — *fait* : $M=KL$, $20$ types de Weil (§2).
-- **Phase 3d (certification CM)** — *à lancer* : $A_\Phi$ + saut $\mathrm{End}^0=M$ degré $12$, signature
-  $(3,3)$, par LLL. Livrable ferme.
-- **Phase 3e (plongement modulaire / localisation)** — *sous-projet dur* : carte de McMullen,
-  $V\cap\mathcal W_K$, points CM sur la courbe.
+- **Phase 3d (certification CM)** — *fait* : $A_\Phi$ CM par $M=\mathbb Q(\zeta_{42})$ degré $12$,
+  simple, Weil $(3,3)$, polarisé — certifié par algèbre exacte ; $12/20$ types de Weil primitifs.
+- **Phase 3e (plongement modulaire / localisation)** — *sous-projet dur, prochaine cible* : carte de
+  McMullen, $V\cap\mathcal W_K$, points CM **sur la courbe** (le mur analytique).
 - **Phase 4** — vers le cycle (effectivité Markman ; lecture serrée ; Lean 4 éventuel). Exploratoire.
 
 ---
@@ -132,6 +137,8 @@ du **ferme/décidable** autour d'un cas ouvert nommé, jamais l'algébricité (n
 - `hodge_phase3_nonsplit_weil.py` — deux témoins non-split certifiés ($\det H=-3,\,-5$).
 - `hodge_phase3b_genericite.py` — **certificat exact $\mathrm{End}_K=K$** (symbolique, identité en $Z$).
 - `hodge_phase3c_cm_mostaed.py` — corps CM $M=KL$ et $20$ types de Weil (exact).
+- `hodge_phase3d_cm_witness.py` — sixfold **CM** $A_\Phi$ certifié ($M=\mathbb Q(\zeta_{42})$ degré $12$,
+  simple, Weil $(3,3)$, polarisé) ; $12/20$ types de Weil primitifs.
 
 ---
 

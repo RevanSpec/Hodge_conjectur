@@ -13,10 +13,11 @@ Types CM : 2^6=64 ; Weil-compatibles (mult. +i sqrt d et -i sqrt d chacune 3 foi
 les 6 plongements de L) : C(6,3)=20, en 10 paires conjuguees (cf. Mostaed Prop. 5.3).
 
 CE QUI EST FERME ICI (ce script) : M, sa structure, ses 20 types de Weil - exact.
-CE QUI VIENT ENSUITE (Phase 3d, in-method) : construire un sixfold CM A_Phi a partir
-  d'un type Weil Phi et CERTIFIER End^0(A_Phi)=M (degre 12) + signature de Weil (3,3)
-  par le reseau d'endomorphismes (LLL, le SAUT 2->12 de la Phase 3b). Cela certifie la
-  "nature CM M=KL degre 12" sur des points CM construits.
+CE QUI VIENT ENSUITE (Phase 3d, in-method, FAIT) : construire un sixfold CM A_Phi a
+  partir d'un type Weil Phi et CERTIFIER End^0(A_Phi)=M (degre 12) + signature de Weil
+  (3,3) par ALGEBRE EXACTE (action CM = matrice compagnon de Phi_42 ; type primitif =>
+  A_Phi simple => End^0=M). Cela certifie la "nature CM M=KL degre 12" sur des points
+  CM construits. Voir hodge_phase3d_cm_witness.py.
 CE QUI EST DUR (Phase 3e, hors de portee directe - donnee explicite de Mostaed requise) :
   le plongement modulaire de la courbe de McMullen V (groupe triangulaire (14,21,42))
   dans X_L, et la resolution de V cap W_K (2816 equations) pour trouver les points CM
@@ -68,5 +69,5 @@ print("  les 20 ensembles I^+ (plongements a +i sqrt d) :")
 for I in weil:
     print("     %s   <->  conj %s" % (I, tuple(sorted(set(range(6)) - set(I)))))
 
-print("\n[Phase 3c] Donnee arithmetique CM posee (exacte). Etape suivante : Phase 3d")
-print("(sixfold CM A_Phi + certification End^0 = M degre 12, signature Weil, via LLL).")
+print("\n[Phase 3c] Donnee arithmetique CM posee (exacte). Phase 3d (FAITE) : sixfold CM")
+print("A_Phi + certification End^0 = M degre 12, signature Weil, par algebre exacte.")
